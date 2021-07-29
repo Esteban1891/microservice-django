@@ -1,0 +1,14 @@
+version: '2'
+services:
+  database:
+    image: wnameless/oracle-xe-11g-r2
+    volumes:
+      - /home/oracle/oradata:/opt/oracle/oradata # persistent oracle database data.
+    ports:
+      - 1521:1521
+      - 8080:8080
+      - 5500:5500
+    environment:
+        MYSQL_ROOT_USER: 'hr'
+        MYSQL_ROOT_PASSWORD: 'hr'
+        MYSQL_DATABASE: 'XE'
