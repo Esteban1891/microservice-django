@@ -3,8 +3,8 @@ from src.hr.api.api import DireccionesListCreateAPIView,  DireccionesRetrieveDes
 
 
 urlpatterns = [
-    path('direccionesRetrieve/<ID_DIRECCION>/',  DireccionesRetrieveDestroyAPIView.as_view(), name = 'district'),
-    path('direccionesObtains/',  DireccionesListCreateAPIView.as_view(), name = 'district'),
+    #path('direccionesRetrieve/<DIRECCION>/',  DireccionesRetrieveDestroyAPIView.as_view(), name = 'district'),
+    path('direccionesObtains/<DIRECCION>/',  DireccionesListCreateAPIView.as_view(), name = 'district'),
 
 ]
 

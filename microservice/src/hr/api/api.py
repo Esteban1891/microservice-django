@@ -7,11 +7,12 @@ class DireccionesRetrieveDestroyAPIView(RetrieveDestroyAPIView):
     serializer_class = DireccionesSerializer
     permission_classes = (permissions.IsAuthenticated,)
     queryset = Direcciones.objects.all()
-    lookup_field = "ID_DIRECCION"
+    lookup_field = "DIRECCION"
 
     def get_queryset(self):
-        username = self.kwargs['ID_DIRECCION']
-        return Direcciones.objects.filter(ID_DIRECCION=username)
+        username = self.kwargs['DIRECCION']
+        print(username)
+        return Direcciones.objects.filter(DIRECCION=username)
         #return self.queryset.filter(o
 
 
@@ -22,5 +23,12 @@ class DireccionesListCreateAPIView(ListCreateAPIView):
     queryset = Direcciones.objects.all()
     serializer_class = DireccionesSerializer
 
+    lookup_field = "DIRECCION"
+
+    def get_queryset(self):
+        username = self.kwargs['DIRECCION']
+        print(username)
+        return Direcciones.objects.filter(DIRECCION=username)
+        #return self.queryset.filter(o
 
 
